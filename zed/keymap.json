@@ -1,0 +1,45 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-h cmd-t": "terminal_panel::ToggleFocus",
+      "cmd-h cmd-a": "agent::ToggleFocus",
+      "cmd-h cmd-o": "editor::RevealInFileManager",
+      "cmd-h cmd-l": "language_selector::Toggle",
+      "cmd-h cmd-r": "git::Restore",
+      "cmd-h cmd-w": "workspace::CloseInactiveTabsAndPanes",
+      "cmd-h right": "pane::SplitRight",
+      "cmd-h left": "pane::SplitLeft",
+      "cmd-h cmd-right": "workspace::ActivatePaneRight",
+      "cmd-h cmd-left": "workspace::ActivatePaneLeft"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-h cmd-h": "editor::Hover",
+      "cmd-h cmd-d": "editor::GoToDefinition",
+      "cmd-h cmd-shift-d": "editor::GoToDefinitionSplit",
+      "cmd-h cmd-n": "editor::Rename",
+      "cmd-h cmd-f": "editor::FindAllReferences",
+      "cmd-h cmd--": "editor::Fold",
+      "cmd-h cmd-+": "editor::UnfoldLines",
+      "cmd-h cmd-shift-+": "editor::UnfoldAll"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-h right": "pane::SplitRight",
+      "cmd-h left": "pane::SplitLeft",
+      "cmd-h down": "pane::SplitDown"
+    }
+  }
+]

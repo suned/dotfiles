@@ -1,0 +1,7 @@
+{
+  "insert breakpoint": {
+    "prefix": "bp",
+    "body": ["breakpoint()"],
+    "description": "insert breakpoint"
+  }
+}

@@ -1,0 +1,96 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "terminal": {
+    "dock": "right",
+    "blinking": "on"
+  },
+  "load_direnv": "shell_hook",
+  "active_pane_modifiers": {
+    "border_size": 1.5
+  },
+  "auto_install_extensions": {
+    "ruff": true,
+    "solarized": true,
+    "nix": true
+  },
+  "agent": {
+    "always_allow_tool_actions": true,
+    "default_profile": "write",
+    "model_parameters": [],
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-3.7-sonnet"
+    },
+    "version": "2"
+  },
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "base_keymap": "VSCode",
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "theme": {
+    "mode": "system",
+    "light": "Solarized Light",
+    "dark": "Solarized Dark"
+  },
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_weight": 300,
+  "ui_font_weight": 300,
+  "languages": {
+    "Python": {
+      "language_servers": ["pyright", "ruff"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "code_actions": {
+            "source.organizeImports.ruff": true,
+            "source.fixAll.ruff": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    }
+  },
+  "cursor_shape": "block",
+  "edit_predictions": {
+    "mode": "eager"
+  },
+  "tab_bar": { "show": false },
+  "show_edit_predictions": false,
+  "experimental.theme_overrides": {
+    "players": [
+      {
+        "cursor": "#dc322f"
+      }
+    ]
+  },
+  "language_models": {
+    "bedrock": {
+      "authentication_method": "named_profile",
+      "region": "eu-west-1",
+      "profile": "zn-stage"
+    }
+  },
+  "lsp": {
+    "pyright": {
+      "settings": {
+        "python": {
+          "pythonPath": ".venv/bin/python"
+        }
+      }
+    }
+  }
+}
