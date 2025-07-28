@@ -10,15 +10,28 @@
     "context": "Workspace",
     "bindings": {
       "cmd-h cmd-t": "terminal_panel::ToggleFocus",
+      "cmd-h cmd-o": "outline_panel::ToggleFocus",
       "cmd-h cmd-a": "agent::ToggleFocus",
-      "cmd-h cmd-o": "editor::RevealInFileManager",
+
       "cmd-h cmd-l": "language_selector::Toggle",
       "cmd-h cmd-r": "git::Restore",
+
       "cmd-h cmd-w": "workspace::CloseInactiveTabsAndPanes",
       "cmd-h right": "pane::SplitRight",
       "cmd-h left": "pane::SplitLeft",
+      "cmd-h down": "pane::SplitDown",
+      "cmd-h up": "pane::SplitUp",
+
       "cmd-h cmd-right": "workspace::ActivatePaneRight",
-      "cmd-h cmd-left": "workspace::ActivatePaneLeft"
+      "cmd-h cmd-left": "workspace::ActivatePaneLeft",
+      "cmd-h cmd-up": "workspace::ActivatePaneUp",
+      "cmd-h cmd-down": "workspace::ActivatePaneDown",
+
+      "cmd-shift-t": "outline::Toggle",
+      "cmd-h w": "pane::CloseAllItems",
+      "cmd-g": "go_to_line::Toggle",
+
+      "cmd-h cmd-z": "workspace::ToggleZoom"
     }
   },
   {
@@ -36,10 +49,6 @@
   },
   {
     "context": "Terminal",
-    "bindings": {
-      "cmd-h right": "pane::SplitRight",
-      "cmd-h left": "pane::SplitLeft",
-      "cmd-h down": "pane::SplitDown"
-    }
+    "bindings": {}
   }
 ]

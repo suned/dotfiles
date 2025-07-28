@@ -1,5 +1,5 @@
 {
-  description = "suned's global nix packages";
+  description = "nix dev shell for my dotfiles";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixpkgs-unstable";
@@ -14,8 +14,6 @@
       devShells.aarch64-darwin.default = pkgs.mkShell {
         name = "nix-global-dev";
         packages = [
-          pkgs.nixd
-          pkgs.nil
           pkgs.just
         ];
       };

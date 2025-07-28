@@ -9,11 +9,12 @@
 {
   "terminal": {
     "dock": "right",
-    "blinking": "on"
+    "blinking": "on",
+    "detect_venv": "off"
   },
   "load_direnv": "shell_hook",
   "active_pane_modifiers": {
-    "border_size": 1.5
+    "border_size": 2.0
   },
   "auto_install_extensions": {
     "ruff": true,
@@ -27,11 +28,10 @@
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-3.7-sonnet"
-    },
-    "version": "2"
+    }
   },
   "features": {
-    "edit_prediction_provider": "zed"
+    "edit_prediction_provider": "copilot"
   },
   "base_keymap": "VSCode",
   "ui_font_size": 16,
@@ -66,11 +66,12 @@
   },
   "cursor_shape": "block",
   "edit_predictions": {
-    "mode": "eager"
+    "mode": "subtle"
   },
   "tab_bar": { "show": false },
   "show_edit_predictions": false,
   "experimental.theme_overrides": {
+    "border.selected": "#b58900",
     "players": [
       {
         "cursor": "#dc322f"

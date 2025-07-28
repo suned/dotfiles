@@ -1,0 +1,5 @@
+[whitelist]
+prefix = ["~/"]
+
+[global]
+log_format = "-"

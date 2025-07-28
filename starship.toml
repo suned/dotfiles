@@ -1,0 +1,16 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+[nix_shell]
+format = "via [$symbol$name]($style) "
+symbol = "❄️ "
+
+[package]
+disabled = true
+
+[custom.dotenv]
+command = 'readlink -f .env | sed "s|^$PWD/||"'
+detect_files = ['.env']
+when = 'test -L .env'
+format = '.env is [$output]($style) '
