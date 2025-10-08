@@ -29,7 +29,6 @@
 
       "cmd-shift-t": "outline::Toggle",
       "cmd-h w": "pane::CloseAllItems",
-      "cmd-g": "go_to_line::Toggle",
 
       "cmd-h cmd-z": "workspace::ToggleZoom"
     }
@@ -39,12 +38,15 @@
     "bindings": {
       "cmd-h cmd-h": "editor::Hover",
       "cmd-h cmd-d": "editor::GoToDefinition",
+      "cmd-h cmd-i": "editor::GoToImplementation",
       "cmd-h cmd-shift-d": "editor::GoToDefinitionSplit",
       "cmd-h cmd-n": "editor::Rename",
       "cmd-h cmd-f": "editor::FindAllReferences",
       "cmd-h cmd--": "editor::Fold",
       "cmd-h cmd-+": "editor::UnfoldLines",
-      "cmd-h cmd-shift-+": "editor::UnfoldAll"
+      "cmd-h cmd-shift-+": "editor::UnfoldAll",
+      "cmd-g": "go_to_line::Toggle",
+      "cmd-h cmd-p": "editor::Format"
     }
   },
   {

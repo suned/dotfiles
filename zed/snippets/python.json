@@ -3,5 +3,10 @@
     "prefix": "bp",
     "body": ["breakpoint()"],
     "description": "insert breakpoint"
+  },
+  "reveal type": {
+    "prefix": "rt",
+    "body": ["reveal_type($1)"],
+    "description": "insert reveal type"
   }
 }

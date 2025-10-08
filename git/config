@@ -1,5 +1,6 @@
 [core]
 	pager = delta
+	editor = zed --wait
 
 [delta]
 	line-numbers = true
@@ -10,17 +11,20 @@
 	diffFilter = delta --color-only
 
 [pull]
-	rebase = false
+    rebase = false
 
 [user]
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICaEJsL4lSOaI5O/Fcpwr2s11JzYpL/gZYifeyj0MTCW
-  email = 1228354+suned@users.noreply.github.com
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICaEJsL4lSOaI5O/Fcpwr2s11JzYpL/gZYifeyj0MTCW
+    email = 1228354+suned@users.noreply.github.com
 
 [gpg]
-  format = ssh
+    format = ssh
 
 [gpg "ssh"]
-  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
 [commit]
-  gpgsign = true
+    gpgsign = true
+
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/

@@ -1,5 +1,9 @@
 .envrc
 .direnv
 .DS_Store
+.rules
+.env.*
+.zed
 scratch.py
+scratch/
 codebook.toml

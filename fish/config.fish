@@ -9,12 +9,13 @@ end
 
 set -x DIRENV_LOG_FORMAT ""
 set -x DEVELOPER_DIR "~/.nix-profile/"
+set -x GIT_EDITOR "zed --wait"
 
 
 if status is-interactive
     abbr gst "git status"
     abbr ga "git add"
-    abbr gaa = "git add -A"
+    abbr gaa "git add -A"
     abbr gcm "git commit -m"
     abbr gp "git push"
     abbr gco "git checkout"
@@ -23,6 +24,16 @@ if status is-interactive
     abbr gl "git log"
     abbr ap "aws-profile"
     abbr asl "aws sso login"
+
+    abbr pm "python -m"
+    abbr pt "pytest"
+    abbr pts "pytest -s"
+    abbr ptlf "pytest --lf"
+    abbr ptd "pytest --pdb --pdbcls=pdbr:RichPdb"
+    abbr ip "ipython"
+
+    abbr z "zed"
+    abbr ae "activate-env"
 
     if command -q eza
         alias ls "eza --icons -F -H --git --group-directories-first"
