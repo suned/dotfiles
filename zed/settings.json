@@ -6,92 +6,145 @@
 // To see all of Zed's default settings without changing your
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
+//
 {
-  "terminal": {
-    "dock": "right",
-    "blinking": "on",
-    "detect_venv": "off"
-  },
-  "load_direnv": "shell_hook",
-  "active_pane_modifiers": {
-    "border_size": 2.0
-  },
-  "auto_install_extensions": {
-    "ruff": true,
-    "solarized": true,
-    "nix": true
-  },
-  "agent": {
-    "always_allow_tool_actions": true,
-    "default_profile": "ask",
-    "model_parameters": [],
-    "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-5"
-    }
-  },
-  "features": {
-    "edit_prediction_provider": "copilot"
-  },
-  "base_keymap": "VSCode",
-  "ui_font_size": 16,
-  "buffer_font_size": 16,
-  "theme": {
-    "mode": "system",
-    "light": "Solarized Light",
-    "dark": "Solarized Dark"
-  },
-  "buffer_font_family": "JetBrainsMono Nerd Font",
-  "ui_font_family": "JetBrainsMono Nerd Font",
-  "buffer_font_weight": 300,
-  "ui_font_weight": 300,
-  "languages": {
-    "Python": {
-      "language_servers": ["pyright", "ruff"],
-      "format_on_save": "on",
-      "formatter": [
-        {
-          "code_actions": {
-            "source.organizeImports.ruff": true,
-            "source.fixAll.ruff": true
-          }
-        },
-        {
-          "language_server": {
-            "name": "ruff"
-          }
-        }
-      ]
-    }
-  },
-  "cursor_shape": "block",
-  "edit_predictions": {
-    "mode": "subtle"
-  },
-  "tab_bar": { "show": false },
-  "show_edit_predictions": false,
-  "experimental.theme_overrides": {
-    "border.selected": "#b58900",
-    "players": [
-      {
-        "cursor": "#dc322f"
-      }
-    ]
-  },
-  "language_models": {
-    "bedrock": {
-      "authentication_method": "named_profile",
-      "region": "eu-west-1",
-      "profile": "zn-stage"
-    }
-  },
-  "lsp": {
-    "pyright": {
-      "settings": {
-        "python": {
-          "pythonPath": ".venv/bin/python"
-        }
-      }
-    }
-  }
+	"cli_default_open_behavior": "new_window",
+ "project_panel": {
+  "dock": "left"
+ },
+ "outline_panel": {
+  "dock": "left"
+ },
+ "collaboration_panel": {
+  "dock": "left"
+ },
+ "git_panel": {
+  "dock": "left"
+ },
+ "icon_theme": {
+		"mode": "light",
+		"light": "Zed (Default)",
+		"dark": "Zed (Default)"
+	},
+	"agent_servers": {
+		"claude-acp": {
+			"type": "registry"
+		}
+	},
+	"search": {
+		"include_ignored": false
+	},
+	"file_finder": {
+		"include_ignored": "all"
+	},
+	"file_scan_inclusions": [".scratch/*"],
+	"file_scan_exclusions": [".venv/*", ".tox/*"],
+	"terminal": {
+		"dock": "right",
+		"blinking": "on",
+		"detect_venv": "off"
+	},
+	"load_direnv": "shell_hook",
+	"active_pane_modifiers": {
+		"border_size": 4.0
+	},
+	"auto_install_extensions": {
+		"solarized": true,
+		"nix": true
+	},
+	"agent": {
+		"dock": "right",
+  "tool_permissions": {
+			"default": "allow"
+		},
+		"default_model": {
+			"effort": "high",
+			"enable_thinking": true,
+			"provider": "copilot_chat",
+			"model": "claude-opus-4.6"
+		},
+		"default_profile": "write",
+		"model_parameters": []
+	},
+	"base_keymap": "VSCode",
+	"ui_font_size": 16,
+	"buffer_font_size": 16,
+	"theme": {
+		"mode": "light",
+		"light": "Gruvbox Light Soft",
+		"dark": "Gruvbox Dark Soft"
+	},
+	"buffer_font_family": "JetBrainsMono Nerd Font",
+	"ui_font_family": "JetBrainsMono Nerd Font",
+	"buffer_font_weight": 300,
+	"ui_font_weight": 300,
+	"languages": {
+		"Rust": {
+			"language_servers": ["rust-analyzer"],
+			"formatter": "language_server",
+			"format_on_save": "on"
+		},
+		"JavaScript": { "formatter": { "language_server": { "name": "biome" } } },
+		"TypeScript": { "formatter": { "language_server": { "name": "biome" } } },
+		"TSX": { "formatter": { "language_server": { "name": "biome" } } },
+		//"JSON": { "formatter": { "language_server": { "name": "biome" } } },
+		"JSONC": { "formatter": { "language_server": { "name": "biome" } } },
+		"CSS": { "formatter": { "language_server": { "name": "biome" } } },
+		"GraphQL": { "formatter": { "language_server": { "name": "biome" } } },
+		"Python": {
+			"language_servers": ["pyright", "ruff"],
+			"format_on_save": "on",
+			"formatter": [
+				{ "code_action": "source.organizeImports.ruff" },
+				{ "code_action": "source.fixAll.ruff" },
+				{
+					"language_server": {
+						"name": "ruff"
+					}
+				}
+			]
+		}
+	},
+	"cursor_shape": "block",
+	"edit_predictions": {
+		"provider": "copilot",
+		"mode": "subtle"
+	},
+	"tab_bar": { "show": false },
+	"show_edit_predictions": true,
+	"experimental.theme_overrides": {
+		"border.selected": "#458588",
+		"players": [
+			{
+				"cursor": "#cc241d"
+			}
+		]
+	},
+	"language_models": {
+		"bedrock": {
+			"authentication_method": "named_profile",
+			"region": "eu-west-1",
+			"profile": "zn-playground"
+		}
+	},
+	"lsp": {
+		"pyright": {
+			"settings": {
+				"python": {
+					"pythonPath": ".venv/bin/python"
+				}
+			}
+		}
+	},
+	"context_servers": {
+		"mcp-server-linear": {
+			// name can be whatever you want
+			"url": "https://mcp.linear.app/mcp"
+		},
+		"mcp-server-github": {
+			"enabled": true,
+			"remote": false,
+			"settings": {}
+		}
+	}
 }

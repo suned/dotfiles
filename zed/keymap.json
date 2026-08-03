@@ -6,51 +6,52 @@
 // To see the default key bindings run `zed: open default keymap`
 // from the command palette.
 [
-  {
-    "context": "Workspace",
-    "bindings": {
-      "cmd-h cmd-t": "terminal_panel::ToggleFocus",
-      "cmd-h cmd-o": "outline_panel::ToggleFocus",
-      "cmd-h cmd-a": "agent::ToggleFocus",
+	{
+		"context": "Workspace",
+		"bindings": {
+		  "cmd-h cmd-e": "editor::GoToDiagnostic",
+			"cmd-h cmd-t": "terminal_panel::ToggleFocus",
+			"cmd-h cmd-o": "outline_panel::ToggleFocus",
+			"cmd-h cmd-a": "agent::ToggleFocus",
 
-      "cmd-h cmd-l": "language_selector::Toggle",
-      "cmd-h cmd-r": "git::Restore",
+			"cmd-h cmd-l": "language_selector::Toggle",
+			"cmd-h cmd-r": "git::Restore",
 
-      "cmd-h cmd-w": "workspace::CloseInactiveTabsAndPanes",
-      "cmd-h right": "pane::SplitRight",
-      "cmd-h left": "pane::SplitLeft",
-      "cmd-h down": "pane::SplitDown",
-      "cmd-h up": "pane::SplitUp",
+			"cmd-h cmd-w": "workspace::CloseInactiveTabsAndPanes",
+			"cmd-h right": "pane::SplitRight",
+			"cmd-h left": "pane::SplitLeft",
+			"cmd-h down": "pane::SplitDown",
+			"cmd-h up": "pane::SplitUp",
 
-      "cmd-h cmd-right": "workspace::ActivatePaneRight",
-      "cmd-h cmd-left": "workspace::ActivatePaneLeft",
-      "cmd-h cmd-up": "workspace::ActivatePaneUp",
-      "cmd-h cmd-down": "workspace::ActivatePaneDown",
+			"cmd-h cmd-right": "workspace::ActivatePaneRight",
+			"cmd-h cmd-left": "workspace::ActivatePaneLeft",
+			"cmd-h cmd-up": "workspace::ActivatePaneUp",
+			"cmd-h cmd-down": "workspace::ActivatePaneDown",
 
-      "cmd-shift-t": "outline::Toggle",
-      "cmd-h w": "pane::CloseAllItems",
+			"cmd-shift-t": "outline::Toggle",
+			"cmd-h w": "pane::CloseAllItems",
 
-      "cmd-h cmd-z": "workspace::ToggleZoom"
-    }
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      "cmd-h cmd-h": "editor::Hover",
-      "cmd-h cmd-d": "editor::GoToDefinition",
-      "cmd-h cmd-i": "editor::GoToImplementation",
-      "cmd-h cmd-shift-d": "editor::GoToDefinitionSplit",
-      "cmd-h cmd-n": "editor::Rename",
-      "cmd-h cmd-f": "editor::FindAllReferences",
-      "cmd-h cmd--": "editor::Fold",
-      "cmd-h cmd-+": "editor::UnfoldLines",
-      "cmd-h cmd-shift-+": "editor::UnfoldAll",
-      "cmd-g": "go_to_line::Toggle",
-      "cmd-h cmd-p": "editor::Format"
-    }
-  },
-  {
-    "context": "Terminal",
-    "bindings": {}
-  }
+			"cmd-h cmd-z": "workspace::ToggleZoom"
+		}
+	},
+	{
+		"context": "Editor",
+		"bindings": {
+			"cmd-h cmd-h": "editor::Hover",
+			"cmd-h cmd-d": "editor::GoToDefinition",
+			"cmd-h cmd-i": "editor::GoToImplementation",
+			"cmd-h cmd-shift-d": "editor::GoToDefinitionSplit",
+			"cmd-h cmd-n": "editor::Rename",
+			"cmd-h cmd-f": "editor::FindAllReferences",
+			"cmd-h cmd--": "editor::Fold",
+			"cmd-h cmd-+": "editor::UnfoldLines",
+			"cmd-h cmd-shift-+": "editor::UnfoldAll",
+			"cmd-g": "go_to_line::Toggle",
+			"cmd-h cmd-p": "editor::Format"
+		}
+	},
+	{
+		"context": "Terminal",
+		"bindings": {}
+	}
 ]

@@ -7,3 +7,5 @@
 scratch.py
 scratch/
 codebook.toml
+
+**/.claude/settings.local.json

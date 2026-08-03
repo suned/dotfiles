@@ -15,6 +15,7 @@
         name = "nix-global-dev";
         packages = [
           pkgs.just
+          pkgs.stow
         ];
       };
     };

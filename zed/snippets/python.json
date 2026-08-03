@@ -8,5 +8,10 @@
     "prefix": "rt",
     "body": ["reveal_type($1)"],
     "description": "insert reveal type"
+  },
+  "raise NotImplementedError": {
+    "prefix": "ri",
+    "body": ["raise NotImplementedError()"],
+    "description": "raise NotImplementedError()"
   }
 }

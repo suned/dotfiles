@@ -5,7 +5,13 @@
 [delta]
 	line-numbers = true
 	navigate = true
-	syntax-theme = "Solarized (light)"
+	detect-dark-light = auto
+
+[delta "light"]
+	syntax-theme = gruvbox-light
+
+[delta "dark"]
+	syntax-theme = gruvbox-dark
 
 [interactive]
 	diffFilter = delta --color-only

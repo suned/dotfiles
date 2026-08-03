@@ -1,30 +1,54 @@
 dotfiles := justfile_directory()
 home := env('HOME')
 
-all: bat zed direnv ssh starship git fish nix ipython
+all: bat zed direnv ssh starship git fish nix ipython claude devbox
 
 ipython:
-    cp -rsn {{ dotfiles }}/ipython/* {{ home }}/.ipython
+    mkdir -p {{ home }}/.ipython
+    stow -d {{ dotfiles }} -t {{ home }}/.ipython -R ipython
+
 fish:
-    cp -rsn {{ dotfiles }}/fish {{ home }}/.config
+    mkdir -p {{ home }}/.config/fish
+    stow -d {{ dotfiles }} -t {{ home }}/.config/fish -R fish
 
 bat:
-    cp -rsn {{ dotfiles }}/bat/ {{ home }}/.config/
+    mkdir -p {{ home }}/.config/bat
+    stow -d {{ dotfiles }} -t {{ home }}/.config/bat -R bat
 
 zed:
-    cp -rsn {{ dotfiles }}/zed {{ home }}/.config/
+    mkdir -p {{ home }}/.config/zed
+    stow -d {{ dotfiles }} -t {{ home }}/.config/zed -R zed
 
 direnv:
-    cp -rsn {{ dotfiles }}/direnv {{ home }}/.config/
+    mkdir -p {{ home }}/.config/direnv
+    stow -d {{ dotfiles }} -t {{ home }}/.config/direnv -R direnv
 
 ssh:
-    cp -rsn {{ dotfiles }}/ssh/* {{ home }}/.ssh/
+    mkdir -p {{ home }}/.ssh
+    stow -d {{ dotfiles }} -t {{ home }}/.ssh -R ssh
 
 starship:
-    cp -sn {{ dotfiles }}/starship.toml {{ home }}/.config/
+    ln -sfn {{ dotfiles }}/starship.toml {{ home }}/.config/starship.toml
 
 git:
-    cp -rsn {{ dotfiles }}/git/ {{ home }}/.config/
+    mkdir -p {{ home }}/.config/git
+    stow -d {{ dotfiles }} -t {{ home }}/.config/git -R git
 
 nix:
-    cp -rsn {{ dotfiles }}/nix {{ home }}/.config
+    mkdir -p {{ home }}/.config/nix
+    stow -d {{ dotfiles }} -t {{ home }}/.config/nix -R nix
+
+claude:
+    mkdir -p {{ home }}/.claude
+    stow -d {{ dotfiles }} -t {{ home }}/.claude -R claude
+
+devbox:
+    mkdir -p {{ home }}/.local/share/devbox/global/default
+    stow -d {{ dotfiles }} -t {{ home }}/.local/share/devbox/global/default -R devbox
+
+install-fonts:
+    mkdir -p ~/Library/Fonts/JetBrainsMono
+    # Fonts on macos are only recognized in ~/Library/Fonts if they are regular files,
+    # not symlinks
+    fonts=$(nix-store -qR {{ home }}/.local/share/devbox/global/default/.devbox/nix/profile/default/ | grep 'jetbrains-mono') && \
+    cp -rn "$fonts/share/fonts/truetype/NerdFonts/JetBrainsMono/." ~/Library/Fonts/JetBrainsMono || true

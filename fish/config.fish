@@ -1,15 +1,25 @@
+if command -q devbox
+    devbox global shellenv --init-hook | source
+end
+
 if command -q direnv
     direnv hook fish | source
 end
+
 
 if command -q starship
     starship init fish | source
 end
 
-
 set -x DIRENV_LOG_FORMAT ""
-set -x DEVELOPER_DIR "~/.nix-profile/"
-set -x GIT_EDITOR "zed --wait"
+
+if test -d ~/nix-global; and command -q nix
+    set -x DEVELOPER_DIR (nix-store -qR ~/.local/share/devbox/global/default/.devbox/nix/profile/default/ | grep '\-apple-sdk-[0-9]')
+end
+
+if command -q zed
+    set -x GIT_EDITOR "zed --wait"
+end
 
 
 if status is-interactive
@@ -32,10 +42,17 @@ if status is-interactive
     abbr ptd "pytest --pdb --pdbcls=pdbr:RichPdb"
     abbr ip "ipython"
 
+    abbr cr "cargo run"
+    abbr cb "cargo build"
+
     abbr z "zed"
     abbr ae "activate-env"
+    abbr db "devbox"
+    abbr --set-cursor zn "~/zeronorth/%"
 
     if command -q eza
         alias ls "eza --icons -F -H --git --group-directories-first"
     end
+
+    alias cage "~/cage/cage"
 end
