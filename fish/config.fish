@@ -1,5 +1,24 @@
+
+# devbox shellenv broken for fish in version 0.17.8
+# workaround: default shell is zsh. hook executed there
+# before fish is started.
+# if command -q devbox
+#     devbox global shellenv --init-hook | source
+# end
+
 if command -q devbox
-    devbox global shellenv --init-hook | source
+    devbox completion fish | source
+end
+
+
+if type -q aws_completer
+	function __aws_completer
+		set -lx COMP_LINE (commandline -pc)
+		set -lx COMP_POINT (string length $COMP_LINE)
+		aws_completer | tr -d ' '
+	end
+
+	complete -c aws -f -a "(__aws_completer)"
 end
 
 if command -q direnv
@@ -12,10 +31,6 @@ if command -q starship
 end
 
 set -x DIRENV_LOG_FORMAT ""
-
-if test -d ~/nix-global; and command -q nix
-    set -x DEVELOPER_DIR (nix-store -qR ~/.local/share/devbox/global/default/.devbox/nix/profile/default/ | grep '\-apple-sdk-[0-9]')
-end
 
 if command -q zed
     set -x GIT_EDITOR "zed --wait"

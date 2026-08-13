@@ -4,9 +4,7 @@
       "Read",
       "Edit",
       "Write",
-      "WebSearch"
-    ],
-    "ask": [
+      "WebSearch",
       "Bash"
     ]
   },
@@ -17,7 +15,8 @@
   },
   "enabledPlugins": {
     "pyright-lsp@claude-plugins-official": true,
-    "rust-analyzer-lsp@claude-plugins-official": true
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "figma@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "claude-plugins-official": {
@@ -39,6 +38,6 @@
     }
   },
   "effortLevel": "high",
-  "theme": "light",
+  "theme": "auto",
   "skipAutoPermissionPrompt": true
 }

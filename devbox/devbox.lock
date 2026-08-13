@@ -405,6 +405,56 @@
         }
       }
     },
+    "fish@latest": {
+      "last_modified": "2026-08-01T16:34:20Z",
+      "resolved": "github:NixOS/nixpkgs/a5cbcfe954791221bfffe2307f7d1a1bf61a871e#fish",
+      "source": "devbox-search",
+      "version": "4.8.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/s6n21wvlj0jinbkaxvzw57ar9gy93iwk-fish-4.8.1",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/654qj7razpqfgbl5af7w3dlssgv1hw5z-fish-4.8.1-doc"
+            }
+          ],
+          "store_path": "/nix/store/s6n21wvlj0jinbkaxvzw57ar9gy93iwk-fish-4.8.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/nylxcxiir4af92q3g3dx4klavqppqzdh-fish-4.8.1",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/92zhzn1qa1w24fwvbslv2lbr1wp92cs2-fish-4.8.1-doc"
+            }
+          ],
+          "store_path": "/nix/store/nylxcxiir4af92q3g3dx4klavqppqzdh-fish-4.8.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/9ljdcpsyal629k1z3azwp26ng6x19bdl-fish-4.8.1",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/a2caksp7w1f1yv0c7lavakk1gbavg184-fish-4.8.1-doc"
+            }
+          ],
+          "store_path": "/nix/store/9ljdcpsyal629k1z3azwp26ng6x19bdl-fish-4.8.1"
+        }
+      }
+    },
     "git@latest": {
       "last_modified": "2026-03-21T07:29:51Z",
       "resolved": "github:NixOS/nixpkgs/09061f748ee21f68a089cd5d91ec1859cd93d0be#git",

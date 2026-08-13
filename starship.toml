@@ -9,6 +9,34 @@ symbol = "❄️  "
 [package]
 disabled = true
 
+# The built-in aws module now triggers on AWS_REGION; our custom modules below
+# replace it with a capability-coloured principal indicator.
+[aws]
+disabled = true
+
+# AWS ephemeral-creds indicator (set by the `aws-ephemeral` fish function).
+# Coloured by capability: red = write, green = read-only, yellow = unknown.
+[custom.aws_write]
+when = 'test "$AWS_EPHEMERAL_CAP" = write'
+command = 'printf "%s" "$AWS_EPHEMERAL_INFO"'
+symbol = '☁️  '
+style = 'bold red'
+format = 'on [$symbol$output]($style) '
+
+[custom.aws_read]
+when = 'test "$AWS_EPHEMERAL_CAP" = read'
+command = 'printf "%s" "$AWS_EPHEMERAL_INFO"'
+symbol = '☁️  '
+style = 'bold green'
+format = 'on [$symbol$output]($style) '
+
+[custom.aws_unknown]
+when = 'test "$AWS_EPHEMERAL_CAP" = unknown'
+command = 'printf "%s" "$AWS_EPHEMERAL_INFO"'
+symbol = '☁️  '
+style = 'bold yellow'
+format = 'on [$symbol$output]($style) '
+
 [custom.dotenv]
 command = 'readlink -f .env | sed "s|^$PWD/||"'
 detect_files = ['.env']

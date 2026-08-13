@@ -1,7 +1,7 @@
 dotfiles := justfile_directory()
 home := env('HOME')
 
-all: bat zed direnv ssh starship git fish nix ipython claude devbox
+all: bat zed direnv ssh starship git fish nix ipython claude devbox zsh
 
 ipython:
     mkdir -p {{ home }}/.ipython
@@ -45,6 +45,9 @@ claude:
 devbox:
     mkdir -p {{ home }}/.local/share/devbox/global/default
     stow -d {{ dotfiles }} -t {{ home }}/.local/share/devbox/global/default -R devbox
+
+zsh:
+    ln -sfn {{ dotfiles }}/zsh/.zshrc {{ home }}/.zshrc
 
 install-fonts:
     mkdir -p ~/Library/Fonts/JetBrainsMono
